@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FrontCard = styled.div`
   width: 370px;
-  height: 220px;
+  height: 210px;
   border-radius: 10px;
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
@@ -42,17 +42,23 @@ export const FrontCard = styled.div`
   & div.textWrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   & span.cardNumber {
     font-weight: 400;
     font-size: 1.6rem;
     word-spacing: 0.5rem;
   }
+  & div.textWrapper  span.name {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }
 
   & span.date{
     position: absolute;
     bottom: 25px;
     right: 25px;
+
+    font-size: 0.9rem;
   }
 ` 

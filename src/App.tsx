@@ -6,7 +6,11 @@ function App() {
   return (
     <>
       <GlobalStyle/>
-      <CardFront/>
+      <CardFront
+        //cardNumber={2500350024004400} 
+        // name={"Janet Aplets"} 
+        //dateCard={1130}      
+      />
     </>
   )
 }
