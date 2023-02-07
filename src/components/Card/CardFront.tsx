@@ -1,14 +1,12 @@
-import { BackCard, FrontCard } from "./Card.styled";
-import cardDecal from '../../assets/svg/card-decal.svg'
+import { FrontCardStyled } from "./CardFront.styled";
+
 
 interface CardFrontType {
   cardNumber?: number
   name?: string
   dateCard?: number
 }
-interface CardBackType {
-  cvv?: number
-}
+
 
 export function CardFront({ cardNumber, name = 'your name here', dateCard }:CardFrontType) {
 
@@ -24,7 +22,7 @@ export function CardFront({ cardNumber, name = 'your name here', dateCard }:Card
 
   return(
     <>
-      <FrontCard>
+      <FrontCardStyled>
         <div className="circle">
           <div></div>
           <div></div>
@@ -34,25 +32,8 @@ export function CardFront({ cardNumber, name = 'your name here', dateCard }:Card
           <span className="name">{name}</span>
         </div>
         <span className="date">{date}</span>
-      </FrontCard>
+      </FrontCardStyled>
     </>
   )
 }
 
-export function CardBack({ cvv }:CardBackType){
-  
-  const cvvNumber: string = cvv ? cvv.toString() : '000'
-  
-  return(
-    <BackCard>
-      <div className="band">
-      </div>
-      <div className="wrapperNumber">
-        <span>{cvvNumber}</span>
-      </div>
-      <div className="decalWrapper">
-        <img src={cardDecal}/>
-      </div>
-    </BackCard>
-  )
-}
