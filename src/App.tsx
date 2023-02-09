@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { CardBack } from "./components/Card/CardBack"
 import { CardFront } from "./components/Card/CardFront"
 import { CardsWrapper } from "./components/Card/CardsWrapper"
@@ -7,6 +8,14 @@ import { GlobalStyle } from "./styles/global"
 
 function App() {
 
+  const [number, setNumber] = useState('')
+  const [name, setName] = useState('')
+  const [month, setMonth] = useState(0)
+  const [year, setYear] = useState(0)
+  const [cvv, setCvv] = useState(123)
+
+  
+  
   return (
     <>
       <GlobalStyle/>
@@ -14,15 +23,23 @@ function App() {
           <CardsWrapper>
             
             <CardFront
-              cardNumber={2500350024004400} 
-              name={"eduardo queiroz"} 
-              dateCard={1130}      
+              cardNumber={number} 
+              name={name} 
+              month={month} 
+              year={year}     
             />
             <CardBack
-              cvv={121}
+              cvv={cvv}
             />
           </CardsWrapper> 
-          <Form></Form>
+          
+          <Form 
+            setMonth={setMonth} 
+            setName={setName} 
+            setCvv={setCvv}
+            setNumber={setNumber}
+            setYear={setYear}
+          />
       </Header>
     </>
   )

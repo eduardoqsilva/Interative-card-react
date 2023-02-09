@@ -10,6 +10,7 @@ export const FormStyled = styled.form`
     width: 27.25rem;
 
     z-index: 10;
+    grid-area: b;
 
     & input {
       padding: 1rem;

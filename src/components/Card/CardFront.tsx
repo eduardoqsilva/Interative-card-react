@@ -2,22 +2,24 @@ import { FrontCardStyled } from "./CardFront.styled";
 
 
 interface CardFrontType {
-  cardNumber?: number
+  cardNumber?: string
   name?: string
-  dateCard?: number
+  month?: number;
+  year?: number;
 }
 
 
-export function CardFront({ cardNumber, name = 'your name here', dateCard }:CardFrontType) {
+export function CardFront({ cardNumber, name, month, year }:CardFrontType) {
 
+  const namef = name?.trim() === '' ? 'your name here' : name
 
   const number: string = cardNumber ? 
-    cardNumber.toString().replace(/\d{4}(?=.)/g, '$& ')
+    cardNumber.replace(/\d{4}(?=.)/g, '$& ')
     : '0000 0000 0000 0000'
 
-  const date: string = dateCard ? 
-    dateCard.toString().replace(/\d{2}(?=.)/g, '$&/')
-    :'00/00'
+  const date: string =  month || year ? `${month ? month : '00' }
+    /${year ? year : '00'}` : '00/00'
+  
 
 
   return(
@@ -29,7 +31,7 @@ export function CardFront({ cardNumber, name = 'your name here', dateCard }:Card
         </div>
         <div className="textWrapper">
           <span className="cardNumber">{number}</span>
-          <span className="name">{name}</span>
+          <span className="name">{namef}</span>
         </div>
         <span className="date">{date}</span>
       </FrontCardStyled>

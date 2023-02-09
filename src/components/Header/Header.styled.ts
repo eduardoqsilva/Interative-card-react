@@ -7,11 +7,11 @@ export const HeaderStyled = styled.header`
   height: 100vh;
   
   display: grid;
-  grid-template-columns: 30% auto;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: 'a b';
   justify-content: center;
   align-items: center;
   justify-items: center;
-  gap: 10rem;
   
   position: relative;
 

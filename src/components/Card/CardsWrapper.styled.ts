@@ -27,9 +27,12 @@ export const CardsWrapperStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 3rem;
   width: fit-content;
   padding: 2rem;
+
+  position: absolute;
+  left: 15%;
   /* margin-right: 2rem */
 
   & ${BackCardStyled} {
