@@ -7,7 +7,8 @@ export const FormStyled = styled.form`
     gap: 1rem;
     padding: 1rem;
     
-    width: 27.25rem;
+    max-width: 27.25rem;
+    width: 100%;
 
     z-index: 10;
     grid-area: b;
@@ -81,5 +82,10 @@ export const FormStyled = styled.form`
 
     & > button:active {
       transform: scale(0.98);
+    }
+
+    @media (max-width: 1400px){
+      grid-area: b;
+      grid-row: 2;
     }
 `

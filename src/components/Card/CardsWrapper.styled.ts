@@ -53,4 +53,17 @@ export const CardsWrapperStyled = styled.div`
     /* animation-fill-mode: forwards; */
     animation-timing-function: ease-in;
   }
+
+  @media (max-width: 1400px){
+    grid-area: a;
+    left: 50%;
+    padding: 0;
+
+    & ${BackCardStyled} {
+      margin-top: -23rem;
+    }
+    & ${FrontCardStyled} {
+      z-index: 10;
+    }
+  }
 `

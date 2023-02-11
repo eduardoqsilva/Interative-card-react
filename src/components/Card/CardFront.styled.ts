@@ -65,4 +65,13 @@ export const FrontCardStyled = styled.div`
 
     font-size: 0.9rem;
   }
+  @media (max-width: 1400px){
+    scale: 0.95;    
+  }
+  @media (max-width: 470px){
+    scale: 0.80;    
+  }
+  @media (max-width: 370px){
+    scale: 0.70;
+  }
 ` 

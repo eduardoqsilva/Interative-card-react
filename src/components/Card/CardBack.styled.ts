@@ -38,5 +38,13 @@ export const BackCardStyled = styled.div`
 
     text-align: end;
   }
-  
+  @media (max-width: 1400px){
+    scale: 0.95;
+  }
+  @media (max-width: 470px){
+    scale: 0.80;
+  }
+  @media (max-width: 370px){
+    scale: 0.70;
+  }
 `

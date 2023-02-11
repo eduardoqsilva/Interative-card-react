@@ -20,22 +20,28 @@ export function Form(props: typeForm){
 
   function handleSetName(event:React.FormEvent<HTMLInputElement>){
     const value = event.currentTarget.value
-    const valueF = value.substring(0, 25)
+    const valueF = value.substring(0, 25).replace(/[0-9]/g, '')
     props.setName(valueF)
   }
   function handleSetNumber(event:React.FormEvent<HTMLInputElement>){
     const value = event.currentTarget.value
-    const valueF = value.substring(0, 16)
+    const valueF= value.substring(0, 16).replace(/[a-z A-z]/g, '')
     props.setNumber(valueF)
   }
   function handleSetMonth(event:React.FormEvent<HTMLInputElement>){
-    props.setMonth(String(event.currentTarget.value))
+    const value = event.currentTarget.value
+    const valueF= value.substring(0, 2).replace(/[a-z A-z]/g, '')
+    props.setMonth(valueF)
   }
   function handleSetYear(event:React.FormEvent<HTMLInputElement>){
-    props.setYear(String(event.currentTarget.value))
+    const value = event.currentTarget.value
+    const valueF= value.substring(0, 2).replace(/[a-z A-z]/g, '')
+    props.setYear(valueF)
   }
   function handleSetCvv(event:React.FormEvent<HTMLInputElement>){
-    props.setCvv(String(event.currentTarget.value))
+    const value = event.currentTarget.value
+    const valueF= value.substring(0, 3).replace(/[a-z A-z]/g, '')
+    props.setCvv(valueF)
   }
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()

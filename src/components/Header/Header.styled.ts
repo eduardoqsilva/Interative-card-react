@@ -12,6 +12,7 @@ export const HeaderStyled = styled.header`
   justify-content: center;
   align-items: center;
   justify-items: center;
+  overflow-y: hidden;
   
   position: relative;
 
@@ -30,5 +31,14 @@ export const HeaderStyled = styled.header`
     position: absolute;
     left: 0;
     top: 0;
+  }
+  @media (max-width: 1400px){
+    ::before {
+      height: 30%;
+      width: 100vw;
+    }
+    grid-template-columns: none;
+    grid-template-rows: 35% 70%;
+    grid-template-areas: 'a b';
   }
 `
