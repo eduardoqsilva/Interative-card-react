@@ -19,10 +19,14 @@ export function Form(props: typeForm){
 
 
   function handleSetName(event:React.FormEvent<HTMLInputElement>){
-    props.setName(event.currentTarget.value)
+    const value = event.currentTarget.value
+    const valueF = value.substring(0, 25)
+    props.setName(valueF)
   }
   function handleSetNumber(event:React.FormEvent<HTMLInputElement>){
-    props.setNumber(event.currentTarget.value)
+    const value = event.currentTarget.value
+    const valueF = value.substring(0, 16)
+    props.setNumber(valueF)
   }
   function handleSetMonth(event:React.FormEvent<HTMLInputElement>){
     props.setMonth(String(event.currentTarget.value))
@@ -43,8 +47,6 @@ export function Form(props: typeForm){
       <input type="text"
         className="inputName"
         id="name" 
-        maxLength={25} 
-        minLength={3}
         placeholder="YOUR NAME HERE"
         required
         onChange={handleSetName}
@@ -56,8 +58,6 @@ export function Form(props: typeForm){
         type="number" 
         className="inputCardNumber" 
         id="cardNumber" 
-        maxLength={16} 
-        minLength={16} 
         placeholder="0000 0000 0000 0000"
         required
         onChange={handleSetNumber}
@@ -70,8 +70,6 @@ export function Form(props: typeForm){
           <input
             className="mmyy"
             type="number"
-            maxLength={2}
-            minLength={2}
             placeholder="MM"
             required
             onChange={handleSetMonth}
@@ -80,8 +78,6 @@ export function Form(props: typeForm){
           <input
             className="mmyy"
             type="number"
-            maxLength={2}
-            minLength={2}
             placeholder="YY"
             required
             onChange={handleSetYear}
@@ -93,7 +89,6 @@ export function Form(props: typeForm){
           <input
             type="number"
             id="cvc"
-            maxLength={3}
             placeholder="123"
             required
             onChange={handleSetCvv}
