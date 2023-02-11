@@ -10,9 +10,9 @@ function App() {
 
   const [number, setNumber] = useState('')
   const [name, setName] = useState('')
-  const [month, setMonth] = useState(0)
-  const [year, setYear] = useState(0)
-  const [cvv, setCvv] = useState(123)
+  const [month, setMonth] = useState('')
+  const [year, setYear] = useState('')
+  const [cvv, setCvv] = useState('')
 
   
   
@@ -39,6 +39,12 @@ function App() {
             setCvv={setCvv}
             setNumber={setNumber}
             setYear={setYear}
+            
+            number={number}
+            name={name}
+            month={month}
+            cvv={cvv}
+            year={year}
           />
       </Header>
     </>

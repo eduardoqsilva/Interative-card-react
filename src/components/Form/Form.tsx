@@ -4,28 +4,34 @@ import { FormStyled } from "./Form.Styled";
 interface typeForm {
   setNumber: (value:string)=> void
   setName: (value:string)=> void
-  setMonth: (value:number)=> void
-  setYear: (value:number)=> void
-  setCvv: (value:number)=> void
+  setMonth: (value:string)=> void
+  setYear: (value:string)=> void
+  setCvv: (value:string)=> void
+
+  number: string
+  name: string
+  month: string 
+  year: string 
+  cvv: string
 }
 
-export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm){
+export function Form(props: typeForm){
 
 
   function handleSetName(event:React.FormEvent<HTMLInputElement>){
-    setName(event.currentTarget.value)
+    props.setName(event.currentTarget.value)
   }
   function handleSetNumber(event:React.FormEvent<HTMLInputElement>){
-    setNumber(event.currentTarget.value)
+    props.setNumber(event.currentTarget.value)
   }
   function handleSetMonth(event:React.FormEvent<HTMLInputElement>){
-    setMonth(Number(event.currentTarget.value))
+    props.setMonth(String(event.currentTarget.value))
   }
   function handleSetYear(event:React.FormEvent<HTMLInputElement>){
-    setYear(Number(event.currentTarget.value))
+    props.setYear(String(event.currentTarget.value))
   }
   function handleSetCvv(event:React.FormEvent<HTMLInputElement>){
-    setCvv(Number(event.currentTarget.value))
+    props.setCvv(String(event.currentTarget.value))
   }
   function onSubmit(e:React.FormEvent<HTMLFormElement>){
     e.preventDefault()
@@ -38,9 +44,11 @@ export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm
         className="inputName"
         id="name" 
         maxLength={25} 
+        minLength={3}
         placeholder="YOUR NAME HERE"
         required
         onChange={handleSetName}
+        value={props.name}
       />
 
       <label htmlFor="cardNumber">card number</label>
@@ -53,6 +61,7 @@ export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm
         placeholder="0000 0000 0000 0000"
         required
         onChange={handleSetNumber}
+        value={props.number}
       />
 
       <div className="grup">
@@ -66,6 +75,7 @@ export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm
             placeholder="MM"
             required
             onChange={handleSetMonth}
+            value={props.month}
           />
           <input
             className="mmyy"
@@ -75,6 +85,7 @@ export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm
             placeholder="YY"
             required
             onChange={handleSetYear}
+            value={props.year}
           />
         </fieldset>
         <div className="cvc">
@@ -86,6 +97,7 @@ export function Form({ setNumber, setName, setMonth, setYear, setCvv }: typeForm
             placeholder="123"
             required
             onChange={handleSetCvv}
+            value={props.cvv}
           />
         </div>
       </div>

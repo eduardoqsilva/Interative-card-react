@@ -4,8 +4,8 @@ import { FrontCardStyled } from "./CardFront.styled";
 interface CardFrontType {
   cardNumber?: string
   name?: string
-  month?: number;
-  year?: number;
+  month?: string;
+  year?: string;
 }
 
 

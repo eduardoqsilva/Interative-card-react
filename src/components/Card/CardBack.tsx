@@ -2,12 +2,12 @@ import { BackCardStyled } from "./CardBack.styled";
 import cardDecal from '../../assets/svg/card-decal.svg'
 
 interface CardBackType {
-  cvv?: number
+  cvv?: string
 }
 
 export function CardBack({ cvv }:CardBackType){
   
-  const cvvNumber: string = cvv ? cvv.toString() : '000'
+  const cvvNumber: string = cvv ? cvv : '000'
   
   return(
     <BackCardStyled>
