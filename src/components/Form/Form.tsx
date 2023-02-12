@@ -48,7 +48,7 @@ export function Form(props: typeForm){
   }
 
   return(
-    <FormStyled onSubmit={onSubmit}>
+    <FormStyled onSubmit={onSubmit} autoComplete="off">
       <label htmlFor="name">cardholder name</label>
       <input type="text"
         className="inputName"
