@@ -56,11 +56,14 @@ export const CardsWrapperStyled = styled.div`
 
   @media (max-width: 1400px){
     grid-area: a;
-    left: 50%;
     padding: 0;
+    flex-direction: column-reverse;
+    gap: 0;
+
+    position: static;
 
     & ${BackCardStyled} {
-      margin-top: -23rem;
+      margin-bottom: -5rem;
     }
     & ${FrontCardStyled} {
       z-index: 10;

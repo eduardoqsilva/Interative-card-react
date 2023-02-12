@@ -37,8 +37,9 @@ export const HeaderStyled = styled.header`
       height: 30%;
       width: 100vw;
     }
-    grid-template-columns: none;
-    grid-template-rows: 35% 70%;
-    grid-template-areas: 'a b';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 `
