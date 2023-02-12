@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header`
   justify-content: center;
   align-items: center;
   justify-items: center;
-  overflow-y: hidden;
+  overflow-x: hidden;
   
   position: relative;
 
@@ -37,6 +37,7 @@ export const HeaderStyled = styled.header`
       height: 30%;
       width: 100vw;
     }
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;

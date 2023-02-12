@@ -87,5 +87,6 @@ export const FormStyled = styled.form`
     @media (max-width: 1400px){
       grid-area: b;
       grid-row: 2;
+      padding: 2rem;
     }
 `

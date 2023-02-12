@@ -59,7 +59,7 @@ export const CardsWrapperStyled = styled.div`
     padding: 0;
     flex-direction: column-reverse;
     gap: 0;
-
+    width: fit-content;
     position: static;
 
     & ${BackCardStyled} {
